@@ -490,7 +490,7 @@ const app = {
         this.loadCurrentSong();
     },
     clearRandomList: function() {
-        // Clear list đã random nếu list >= 3/4 list songs
+        // Clear list đã random hết list thì clear
         if (this.randomList.length >= this.songs.length) {
             this.randomList = [];
         }
