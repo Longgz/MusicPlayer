@@ -21,6 +21,7 @@ const app = {
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
+    randomList: [],
     config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
     songs: [
         {
@@ -482,9 +483,17 @@ const app = {
         let newIndex;
         do {
             newIndex = Math.floor(Math.random() * this.songs.length);
-        } while (newIndex === this.currentIndex);
+        } while (newIndex === this.currentIndex || this.randomList.includes(newIndex));
         this.currentIndex = newIndex;
+        this.randomList.push(newIndex);
+        this.clearRandomList();
         this.loadCurrentSong();
+    },
+    clearRandomList: function() {
+        // Clear list đã random nếu list >= 3/4 list songs
+        if (this.randomList.length >= this.songs.length) {
+            this.randomList = [];
+        }
     },
     start: function() {
         // Gán cấu hình từ config vào app
