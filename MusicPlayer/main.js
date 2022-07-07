@@ -26,8 +26,8 @@ const app = {
         {
             name: 'THÍCH EM HƠI NHIỀU',
             singer: 'WREN EVANS',
-            path: './assets/music/music5.mp3',
-            image: './assets/img/img5.jpg'
+            path: './assets/music/music39.mp3',
+            image: './assets/img/img39.jpg'
         },
         {
             name: 'Nước Mắt Em Lau Bằng Tình Yêu Mới',
