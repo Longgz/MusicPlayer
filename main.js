@@ -443,6 +443,7 @@ const app = {
         }, 500)
     },
     loadCurrentSong: function() {
+        this.setConfig('currentIndex', this.currentIndex);
         heading.textContent = this.currentSong.name;
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
         audio.src = this.currentSong.path;
@@ -450,6 +451,7 @@ const app = {
     loadConfig: function() {
         this.isRandom = this.config.isRandom;
         this.isRepeat = this.config.isRepeat;
+        this.currentIndex = this.config.currentIndex;
 
         // Hợp nhất cấu hình của config vào this
         // Object.assign(this , this.config)
