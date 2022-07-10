@@ -230,7 +230,7 @@ const app = {
             image: './assets/img/img28.jpg'
         },
         {
-            name: ' I Knew You Were Trouble',
+            name: 'I Knew You Were Trouble',
             singer: 'Taylor Swift',
             path: './assets/music/music29.mp3',
             image: './assets/img/img29.jpg'
@@ -319,7 +319,16 @@ const app = {
         localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
     },
     render: function () {
-        const htmls = this.songs.map((song, index) => {
+        var songsSorted = this.songs.sort(function (a, b) {
+            if (a.name < b.name) {
+                return -1;
+            }
+            if (a.name > b.name) {
+                return 1;
+            }
+            return 0;
+        });
+        const htmls = songsSorted.map((song, index) => {
             return `
                 <div class="song ${index === this.currentIndex ? 'active' : ''}" data-index="${index}">
                     <div class="thumb"
