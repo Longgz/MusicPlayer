@@ -314,12 +314,8 @@ const app = {
             image: './assets/img/img43.jpg'
         },
     ],
-    setConfig: function (key, value) {
-        this.config[key] = value;
-        localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
-    },
-    render: function () {
-        var songsSorted = this.songs.sort(function (a, b) {
+    handleSortSongs: function () {
+        this.songs = this.songs.sort(function (a, b) {
             if (a.name < b.name) {
                 return -1;
             }
@@ -328,7 +324,13 @@ const app = {
             }
             return 0;
         });
-        const htmls = songsSorted.map((song, index) => {
+    },
+    setConfig: function (key, value) {
+        this.config[key] = value;
+        localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
+    },
+    render: function () {
+        const htmls = this.songs.map((song, index) => {
             return `
                 <div class="song ${index === this.currentIndex ? 'active' : ''}" data-index="${index}">
                     <div class="thumb"
@@ -558,6 +560,9 @@ const app = {
     start: function () {
         // Gán cấu hình từ config vào app
         this.loadConfig();
+
+        // Sắp xếp các bài hát theo tên a-z
+        this.handleSortSongs();
 
         // Định nghĩa các thuộc tính cho Object
         this.defineProperties();
