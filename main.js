@@ -27,6 +27,12 @@ const app = {
     config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
     songs: [
         {
+            name: "Điều anh piết",
+            singer: "Longgg",
+            path: "./assets/music/long1_dieuanhbiet.mp3",
+            image: "./assets/img/long1.jpg",
+        },
+        {
             name: "Đứa Nào Làm Em Buồn",
             singer: "Phúc Du Ft. Hoàng Dũng",
             path: "./assets/music/music50.mp3",
