@@ -39,10 +39,10 @@ const app = {
             image: "./assets/img/img50.jpg",
         },
         {
-            name: "Vì Yêu Cứ Đâm Đầu",
-            singer: "Min, JustaTee, Đen",
+            name: "Midnight Rain",
+            singer: "Taylor Swift",
             path: "./assets/music/music44.mp3",
-            image: "./assets/img/img44.jpg",
+            image: "./assets/img/img44.jfif",
         },
         {
             name: "THÍCH EM HƠI NHIỀU",
@@ -325,6 +325,24 @@ const app = {
             singer: "Vicetone, Cozi Zuehlsdorff",
             path: "./assets/music/music43.mp3",
             image: "./assets/img/img43.jpg",
+        },
+        {
+            name: "You're On Your Own Kid",
+            singer: "Taylor Swift",
+            path: "./assets/music/music51.mp3",
+            image: "./assets/img/img51.jfif",
+        },
+        {
+            name: "Maroon",
+            singer: "Taylor Swift",
+            path: "./assets/music/music52.mp3",
+            image: "./assets/img/img52.jpg",
+        },
+        {
+            name: "Paris",
+            singer: "Taylor Swift",
+            path: "./assets/music/music53.mp3",
+            image: "./assets/img/img53.jpg",
         },
     ],
     handleSortSongs: function () {
